@@ -1,1 +1,28 @@
-<p>courses works!</p>
+<div class="general">
+    <app-header [appName]=''>
+        <h1>
+            <div class="logo">Harry Potter</div>
+
+            </h1>
+        <app-button 
+            [btnText]="'Logout'" 
+            [iconName]="iconHeader"
+        ></app-button>
+    </app-header>
+    
+    <br/>
+    
+    <app-info 
+        [title]="'Info Block Title'"
+        [text]="'Some optional text for info block'"
+    >
+        <app-button 
+            [btnText]="'Info Button'"
+            [iconName]="iconInfo"
+        ></app-button>
+    </app-info>
+
+    <app-course-list [courses]="courseItems"></app-course-list>
+    
+</div>
+    

@@ -1,0 +1,14 @@
+<div class="list">
+    <app-course-card
+        *ngFor="let courseItem of courses"
+        [courseItem]="courseItem"
+    >
+    <app-button [btnText]="'Show Course'"></app-button>
+
+    <ng-container *ngIf="isEditable">
+        <app-button [btnText]="'Edit'"></app-button>
+        <app-button [btnText]="'Remove'"></app-button>
+    </ng-container>
+        
+    </app-course-card>
+</div>

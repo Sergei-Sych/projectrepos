@@ -1,0 +1,18 @@
+.logo {
+    width: 85px;
+    height: 20px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: right;
+    color: #333E48;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.component{
+    flex-direction: column;
+}

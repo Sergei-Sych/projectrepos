@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input} from '@angular/core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+
 
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.css']
 })
-export class ButtonComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class ButtonComponent {
+  
+  @Input() btnText?: string;
+  @Input() iconName!: IconProp;
 
 }

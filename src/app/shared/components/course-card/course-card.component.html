@@ -1,0 +1,10 @@
+<div class="card">
+    <h2 class="card-title">{{courseItem.title}}</h2>
+    <p>Info: {{courseItem.description}}</p>
+    <p>Creation date: {{courseItem.creationDate | date: 'dd.MM.YYYY'}}</p>
+    <p>Duration: {{courseItem.duration }}</p>
+    <br/>
+    <p>Authors: {{courseItem.authors}}</p>
+
+    <ng-content></ng-content>
+</div>

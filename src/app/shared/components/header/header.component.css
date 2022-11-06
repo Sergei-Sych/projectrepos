@@ -1,0 +1,26 @@
+.header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid;
+}
+
+.logo {
+    padding: 0 10px 5px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.logo-title {
+    font-family: cursive;
+    font-size: xx-large;
+    font-weight: 700;
+    padding-left: 10px;
+    color: #293241;
+}
+
+.user-controllers {
+    padding-right: 10px;
+    display: flex;
+}

@@ -1,0 +1,26 @@
+.markup {
+    display: flex;
+    justify-content: center;
+}
+
+.info-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 5px solid #293241;
+    padding: 10px;
+    width: 50%;
+}
+
+.info-title {
+    font-family: cursive;
+    font-size: xx-large;
+    font-weight: 700;
+    color: #293241;
+}
+
+.info-text {
+    margin: 25px 0;
+    font-size: large;
+}
