@@ -1,1 +1,52 @@
-<p>registration works!</p>
+<div class="form-wrapper">
+    <h1 class="form-title">Registration</h1>
+    <form 
+        [formGroup]="registerForm"
+        (ngSubmit)="onSubmit()"
+    >
+        <div class="input-box">
+            <label for="name">Name</label>
+            <input
+                id="name"
+                type="text"
+                formControlName="name"
+                [ngClass]="{'invalid-input': submitted && f['name'].errors}"
+            />
+            <div *ngIf="submitted && f['name'].errors" class="has-danger">
+                <span *ngIf="f['name'].errors['required']">Name is required.</span>
+                <span *ngIf="f['name'].errors['minlength']">Name should not be less than 6 symbols</span>
+            </div>
+        </div>
+        <div class="input-box">
+            <label for="email">Email</label>
+            <input 
+                type="text" 
+                id="email"
+                formControlName="email"
+                [ngClass]="{'invalid-input': submitted && f['email'].errors}"
+            />
+            <div *ngIf="submitted && f['email'].errors" class="has-danger">
+                <span *ngIf="f['email'].errors['required']">Email is required.</span>
+                <span *ngIf="f['email'].errors['email']">Email must be a valid email address</span>
+            </div>
+        </div>
+        <div class="input-box">
+            <label for="password">Password</label>
+            <input 
+                type="text" 
+                id="password"
+                formControlName="password"
+                [ngClass]="{'invalid-input': submitted && f['password'].errors}"
+            />
+            <fa-icon [icon]="iconName" class="input-icon"></fa-icon>
+            <span *ngIf="submitted && f['password'].errors" class="has-danger">Password is required.</span>
+        </div>
+
+        <button type="submit">LOGIN</button>
+    
+        <div class="info-box">
+            <span>{{infoText}}</span>
+            <a href="#">Login</a>
+        </div>
+    </form>
+</div>

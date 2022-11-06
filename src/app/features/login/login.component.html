@@ -1,1 +1,59 @@
-<p>login works!</p>
+<app-header [appName]="'Courses App'"></app-header>
+
+<div class="form-wrapper">
+    <h1 class="form-title">Login</h1>
+    <form 
+        #loginForm="ngForm" 
+        (ngSubmit)="loginForm.form.valid && onSubmit()"
+    >
+        <div class="input-box">
+            <label for="email">Email</label>
+            <input 
+                type="text" 
+                name="email"
+                [(ngModel)]="formModal.email"
+                [ngClass]="{'invalid-input': email.invalid && (loginForm.submitted || email.touched)}"
+                #email="ngModel"
+                email
+                required
+            />
+            <span 
+                *ngIf="(email.touched || loginForm.submitted) && email.errors?.['required']"
+                class="has-danger"
+            >
+                Email is required
+            </span>
+            <span 
+                *ngIf="email.touched && email.errors?.['email']"
+                class="has-danger"
+            >
+                Enter a valid email address
+            </span>
+        </div>
+        <div class="input-box">
+            <label for="password">Password</label>
+            <input 
+                type="text" 
+                name="password" 
+                [(ngModel)]="formModal.password"
+                [ngClass]="{'invalid-input': password.invalid && (loginForm.submitted || password.touched)}"
+                #password="ngModel"
+                required
+            />
+            <fa-icon [icon]="iconName" class="input-icon"></fa-icon>
+            <span 
+                *ngIf="(password.touched || loginForm.submitted) && password.errors?.['required']"
+                class="has-danger"
+            >
+                Password is required
+            </span>
+        </div>
+
+        <button type="submit">Login</button>
+    
+        <div class="info-box">
+            <span>{{infoText}}</span>
+            <a href="#">Registration</a>
+        </div>
+    </form>
+</div>
