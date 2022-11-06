@@ -10,29 +10,18 @@ import { CourseListComponent, } from './components/course-list/course-list.compo
 import { HourMinutes } from './hour-minute.pipe';
 
 
+const COMPONENTS = [ HeaderComponent, ButtonComponent, SearchComponent, InfoComponent, CourseCardComponent, CourseListComponent];
 @NgModule({
   declarations: [
-    ButtonComponent,
-    HeaderComponent,
-    InfoComponent,
-    SearchComponent,
-    CourseCardComponent,
-    CourseListComponent,
-
+    ...COMPONENTS,
+    HourMinutes
   ],
   imports: [
     CommonModule,
     FontAwesomeModule
   ],
-
-  exports: [
-    HeaderComponent,
-    ButtonComponent,
-    InfoComponent,
-    CourseListComponent,
-  ]
-
+  exports: [...COMPONENTS]
 })
-export class SharedModule {
-}
+export class SharedModule {}
+
 
