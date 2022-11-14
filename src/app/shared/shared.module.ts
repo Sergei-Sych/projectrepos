@@ -10,6 +10,8 @@ import { CourseListComponent, } from './components/course-list/course-list.compo
 import { HourMinutes } from './hour-minute.pipe';
 import { CourseFormComponent } from './components/course-form/course-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreationDate } from './pipes/create-date.pipe';
+import { StringJoiner } from './pipes/string-joiner.pipe';
 
 
 
@@ -23,7 +25,8 @@ const COMPONENTS = [
   declarations: [
     ...COMPONENTS,
     HourMinutes,
-    CourseFormComponent
+    CreationDate,
+    StringJoiner
   ],
   imports: [
     CommonModule,

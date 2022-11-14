@@ -32,7 +32,7 @@
                     </div>
                     
                     <label for="author">Author name</label>
-                    <input id="author" type="text" formControlName="authors">
+                    <input id="author" type="text" formControlName="newAuthor">
     
                     <button type="submit" class="create-btn">Create Author</button>
                 </div>
@@ -40,6 +40,7 @@
                     <div class="title">
                         <span class="block-title">Authors List</span>
                     </div>
+                    <ng-container formArrayName="authors"></ng-container>
                 </div>
             </div>
 

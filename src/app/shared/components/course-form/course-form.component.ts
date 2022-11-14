@@ -21,7 +21,9 @@ export class CourseFormComponent {
       description: ['', Validators.required],
       creationAt: [new Date(), Validators.required],
       duration: ['', [Validators.required, Validators.min(1)]],
-      authors: ['']
+      newAuthor: [''],
+      authors: this.form.array([this.form.control('', Validators.required)])
+
     });
   }
 
