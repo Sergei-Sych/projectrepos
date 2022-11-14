@@ -10,9 +10,9 @@
                 id="name"
                 type="text"
                 formControlName="name"
-                [ngClass]="{'invalid-input': submitted && f['name'].errors}"
+                [ngClass]="{'invalid-input': (submitted || f['name'].touched) && f['name'].errors}"
             />
-            <div *ngIf="submitted && f['name'].errors" class="has-danger">
+            <div *ngIf="(submitted || f['name'].touched) && f['name'].errors" class="has-danger">
                 <span *ngIf="f['name'].errors['required']">Name is required.</span>
                 <span *ngIf="f['name'].errors['minlength']">Name should not be less than 6 symbols</span>
             </div>
@@ -23,9 +23,9 @@
                 type="text" 
                 id="email"
                 formControlName="email"
-                [ngClass]="{'invalid-input': submitted && f['email'].errors}"
+                [ngClass]="{'invalid-input': (submitted || f['email'].touched) && f['email'].errors}"
             />
-            <div *ngIf="submitted && f['email'].errors" class="has-danger">
+            <div *ngIf="(submitted || f['email'].touched) && f['email'].errors" class="has-danger">
                 <span *ngIf="f['email'].errors['required']">Email is required.</span>
                 <span *ngIf="f['email'].errors['email']">Email must be a valid email address</span>
             </div>
@@ -36,10 +36,10 @@
                 type="text" 
                 id="password"
                 formControlName="password"
-                [ngClass]="{'invalid-input': submitted && f['password'].errors}"
+                [ngClass]="{'invalid-input': (submitted || f['password'].touched) && f['password'].errors}"
             />
             <fa-icon [icon]="iconName" class="input-icon"></fa-icon>
-            <span *ngIf="submitted && f['password'].errors" class="has-danger">Password is required.</span>
+            <span *ngIf="(submitted || f['password'].touched) && f['password'].errors" class="has-danger">Password is required</span>
         </div>
 
         <button type="submit">LOGIN</button>

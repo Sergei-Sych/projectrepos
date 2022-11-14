@@ -7,9 +7,9 @@
                     id="title" 
                     type="text" 
                     formControlName="title"
-                    [ngClass]="{'invalid-input': submitted && f['title'].errors}"
+                    [ngClass]="{'invalid-input': (submitted || f['title'].touched) && f['title'].errors}"
                 >
-                <span *ngIf="submitted && f['title'].errors" class="has-danger">Title is required</span>
+                <span *ngIf="(submitted || f['title'].touched) && f['title'].errors" class="has-danger">Title is required</span>
             </div>    
             <button type="submit">Create Course</button>
         </div>
@@ -19,9 +19,9 @@
             <textarea
                 id="description"
                 formControlName="description"
-                [ngClass]="{'invalid-input': submitted && f['description'].errors}"
+                [ngClass]="{'invalid-input': (submitted || f['description'].touched) && f['description'].errors}"
             ></textarea>
-            <span *ngIf="submitted && f['description'].errors" class="has-danger">Description is required</span>
+            <span *ngIf="(submitted || f['description'].touched) && f['description'].errors" class="has-danger">Description is required</span>
         </div>
 
         <div class="add-box">
@@ -53,9 +53,9 @@
                     id="duration"
                     type="number"
                     formControlName="duration"
-                    [ngClass]="{'invalid-input': submitted && f['duration'].errors}"
+                    [ngClass]="{'invalid-input': (submitted || f['duration'].touched) && f['duration'].errors}"
                 >
-                <span *ngIf="submitted && f['duration'].errors" class="has-danger">Duration is required and bigger than 0</span>
+                <span *ngIf="(submitted || f['duration'].touched) && f['duration'].errors" class="has-danger">Duration is required and bigger than 0</span>
                 <span>Duration: {{f['duration'].value | hourMinutes}} hours</span>
             </div>            
         </div>    
