@@ -1,0 +1,76 @@
+label{
+    font-size: large;
+    font-weight: 800;
+}
+
+button {
+    border: 2px solid rgba(211, 179, 241, 255);
+    padding: 5px 40px;
+    height: 40px;
+    width: 200px;
+}
+
+input{
+    border: 2px solid rgba(243, 160, 86, 255);
+    border-radius: 4px;
+}
+
+textarea {
+    border: 2px solid rgba(249, 226, 158, 255);
+    border-radius: 4px;
+    height: 300px;
+    resize: none;
+}
+
+.has-danger {
+    color: #dc3545;
+}
+
+.invalid-input{
+    border-color: #dc3545;
+}
+
+.course-form {
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid rgba(164, 212, 239, 255);
+}
+
+.course-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.course-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.half{
+    width: 50%;
+    padding: 10px;
+}
+
+.add-box {
+    border: 2px solid rgba(148, 147, 147, 255);
+}
+
+.add-author{
+    width: 50%;
+}
+
+.create-btn{
+    margin-top: 15px;
+}
+
+.block-title {
+    font-size: x-large;
+    font-weight: 700;
+}

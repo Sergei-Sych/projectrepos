@@ -1,0 +1,63 @@
+<div class="course-form">
+    <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+        <div class="course-wrapper">
+            <div class="course-box">
+                <label for="title">Title</label>
+                <input 
+                    id="title" 
+                    type="text" 
+                    formControlName="title"
+                    [ngClass]="{'invalid-input': submitted && f['title'].errors}"
+                >
+                <span *ngIf="submitted && f['title'].errors" class="has-danger">Title is required</span>
+            </div>    
+            <button type="submit">Create Course</button>
+        </div>
+
+        <div class="course-box">
+            <label for="description">Description</label>
+            <textarea
+                id="description"
+                formControlName="description"
+                [ngClass]="{'invalid-input': submitted && f['description'].errors}"
+            ></textarea>
+            <span *ngIf="submitted && f['description'].errors" class="has-danger">Description is required</span>
+        </div>
+
+        <div class="add-box">
+            <div class="course-wrapper">
+                <div class="course-box half">
+                    <div class="title">
+                        <span class="block-title">Add Authors</span>
+                    </div>
+                    
+                    <label for="author">Author name</label>
+                    <input id="author" type="text" formControlName="authors">
+    
+                    <button type="submit" class="create-btn">Create Author</button>
+                </div>
+                <div class="course-box half">
+                    <div class="title">
+                        <span class="block-title">Authors List</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-box half">
+                <div class="title">
+                    <span class="block-title">Duration</span>
+                </div>
+
+                <label for="duration">Duration</label>
+                <input
+                    id="duration"
+                    type="number"
+                    formControlName="duration"
+                    [ngClass]="{'invalid-input': submitted && f['duration'].errors}"
+                >
+                <span *ngIf="submitted && f['duration'].errors" class="has-danger">Duration is required and bigger than 0</span>
+                <span>Duration: {{f['duration'].value | hourMinutes}} hours</span>
+            </div>            
+        </div>    
+    </form>
+</div>
