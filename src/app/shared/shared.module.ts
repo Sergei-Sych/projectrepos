@@ -8,17 +8,27 @@ import {  CourseCardComponent} from './components/course-card/course-card.compon
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CourseListComponent, } from './components/course-list/course-list.component';
 import { HourMinutes } from './hour-minute.pipe';
+import { CourseFormComponent } from './components/course-form/course-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
-const COMPONENTS = [ HeaderComponent, ButtonComponent, SearchComponent, InfoComponent, CourseCardComponent, CourseListComponent];
+
+const COMPONENTS = [ 
+  HeaderComponent, ButtonComponent, SearchComponent, 
+  InfoComponent, CourseCardComponent, CourseListComponent,
+  CourseFormComponent
+];
+
 @NgModule({
   declarations: [
     ...COMPONENTS,
-    HourMinutes
+    HourMinutes,
+    CourseFormComponent
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ],
   exports: [...COMPONENTS]
 })
