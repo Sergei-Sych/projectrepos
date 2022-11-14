@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { authorValidator as authorCheck } from '../../validators/author.validator';
 
 @Component({
   selector: 'app-course-form',
@@ -21,13 +22,12 @@ export class CourseFormComponent {
       description: ['', Validators.required],
       creationAt: [new Date(), Validators.required],
       duration: ['', [Validators.required, Validators.min(1)]],
-      newAuthor: [''],
+      newAuthor: ['', authorCheck()],
       authors: this.form.array([this.form.control('', Validators.required)])
-
     });
   }
 
-  get f() { return this.courseForm.controls; }
+  get formController() { return this.courseForm.controls; }
 
   onSubmit(){
     this.submitted = true;
@@ -38,3 +38,5 @@ export class CourseFormComponent {
     console.log(this.courseForm.value);
   }
 }
+
+
