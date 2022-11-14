@@ -9,7 +9,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CourseListComponent, } from './components/course-list/course-list.component';
 import { HourMinutes } from './hour-minute.pipe';
 import { CourseFormComponent } from './components/course-form/course-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -28,7 +28,8 @@ const COMPONENTS = [
   imports: [
     CommonModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [...COMPONENTS]
 })

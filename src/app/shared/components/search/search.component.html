@@ -1,1 +1,11 @@
-<p>search works!</p>
+<h1>Search Component</h1>
+
+<form
+    #searchForm="ngForm"
+    (onSubmit)="searchForm.form.valid && onSearch()"
+>
+    <div class="search-wrapper">
+        <input type="text" name="search" placeholder="{{placeholder}}"/>
+        <button type="submit">Search</button>
+    </div>
+</form>
