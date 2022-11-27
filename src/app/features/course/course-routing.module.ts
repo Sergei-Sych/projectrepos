@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthorizedGuard } from 'src/app/auth/guards/authorized.guard';
+import { CourseDetailsComponent } from './course-details/course-details.component';
+import { CourseEditorComponent } from './course-editor/course-editor.component';
 import { CourseComponent } from './course.component';
 
 const routes: Routes = [
-  { path: '', component: CourseComponent }
+  { path: 'add', component: CourseComponent, canLoad: [AuthorizedGuard] }, 
+  { path: ':id', component: CourseDetailsComponent, canLoad: [AuthorizedGuard]},
+  { path: 'edit/:id', component: CourseEditorComponent, canLoad: [AuthorizedGuard]}
 ];
 
 @NgModule({

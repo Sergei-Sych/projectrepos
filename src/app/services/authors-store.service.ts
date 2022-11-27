@@ -16,7 +16,9 @@ export class AuthorsStoreService {
   constructor(private authorService: AuthorsService) { }
 
   getAllAuthors() {
-    this.authorService.getAllAuthors().subscribe(res => this._authors.next(res));
+    return this.authorService.getAllAuthors().subscribe(
+      res => this._authors.next(res)
+      );
   }
 
   addAuthor(author: Author) {
@@ -25,6 +27,6 @@ export class AuthorsStoreService {
         const newAuthorsList = [...this._authors.getValue(), author];
         this._authors.next(newAuthorsList);
       }
-    )
+    );
   }
 }

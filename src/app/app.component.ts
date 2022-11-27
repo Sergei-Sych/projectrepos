@@ -9,3 +9,4 @@ export class AppComponent {
   title = 'courses-app';
   iconHeader = faBarsStaggered;
 }
+

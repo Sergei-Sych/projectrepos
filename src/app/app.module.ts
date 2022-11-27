@@ -7,6 +7,7 @@ import { RegistrationModule } from './features/registration/registration.module'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SharedModule } from './shared/shared.module';
 import { appRouting } from './app-routing.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,10 @@ import { appRouting } from './app-routing.module';
     LoginModule,
     RegistrationModule,
     SharedModule,
-    appRouting
+    appRouting,
+    AuthModule
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
