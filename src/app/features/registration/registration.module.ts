@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RegistrationComponent } from './registration.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegistrationRoutingModule } from './registratiton-routing.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RegistrationRoutingModule
   ],
   exports: [RegistrationComponent]
 })

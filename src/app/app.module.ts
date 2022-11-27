@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CoursesModule } from './features/courses/courses.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginModule } from './features/login/login.module';
 import { RegistrationModule } from './features/registration/registration.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SharedModule } from './shared/shared.module';
+import { appRouting } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,9 +18,8 @@ import { SharedModule } from './shared/shared.module';
     FontAwesomeModule,
     LoginModule,
     RegistrationModule,
-    SharedModule
-
-
+    SharedModule,
+    appRouting
   ],
   bootstrap: [AppComponent]
 })

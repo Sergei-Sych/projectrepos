@@ -4,7 +4,7 @@ import { LoginComponent } from './login.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { LoginRoutingModule } from './login-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CommonModule,
     SharedModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    LoginRoutingModule
   ],
   exports: [LoginComponent]
 })

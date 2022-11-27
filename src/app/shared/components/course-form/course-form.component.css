@@ -18,7 +18,7 @@ input{
 textarea {
     border: 2px solid rgba(249, 226, 158, 255);
     border-radius: 4px;
-    height: 300px;
+    height: 200px;
     resize: none;
 }
 

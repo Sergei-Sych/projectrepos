@@ -1,11 +1,35 @@
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from "@angular/router";
 
-const routes: Routes = [];
+const appRoutes: Routes = [
+    {
+        path: 'login',
+        loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule)
+    },
+    {
+        path: 'registration',
+        loadChildren: () => import('./features/registration/registration.module').then(m => m.RegistrationModule)
+    },
+    {
+        path: 'courses',
+        loadChildren: () => import('./features/courses/courses.module').then(m => m.CoursesModule)
+    },
+    {
+        path: 'courses/add',
+        loadChildren: () => import('./features/course/course.module').then(m => m.CourseModule)
+    },
+    {
+        path: 'courses/:id',
+        loadChildren: () => import('./features/registration/registration.module').then(m => m.RegistrationModule)
+    },
+    {
+        path: 'courses/edit/:id',
+        loadChildren: () => import('./features/registration/registration.module').then(m => m.RegistrationModule)
+    },
+    {
+        path: '',
+        redirectTo: 'courses',
+        pathMatch: 'full'
+    }
+];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule, CommonModule]
-})
-export class AppRoutingModule { }
+export const appRouting = RouterModule.forRoot(appRoutes);
