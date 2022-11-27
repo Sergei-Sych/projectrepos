@@ -1,4 +1,3 @@
-
 <div class="form-wrapper">
     <h1 class="form-title">Login</h1>
     <form 
@@ -13,7 +12,7 @@
                 [(ngModel)]="formModal.email"
                 [ngClass]="{'invalid-input': email.invalid && (loginForm.submitted || email.touched)}"
                 #email="ngModel"
-                email
+                emailCheck
                 required
             />
             <span 
@@ -23,7 +22,7 @@
                 Email is required
             </span>
             <span 
-                *ngIf="email.touched && email.errors?.['email']"
+                *ngIf="email.touched && email.errors?.['invalidEmail']"
                 class="has-danger"
             >
                 Enter a valid email address
