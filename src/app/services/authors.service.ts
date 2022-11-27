@@ -14,7 +14,7 @@ export class AuthorsService {
     return this.http.get<Author[]>(this.REST_API_SERVER + '/authors/all');
   }
 
-  public addAuthor(author: Author) {
+  public addAuthor(author: any) {
     return this.http.post(this.REST_API_SERVER + '/authors/add', author);
   }
 }
