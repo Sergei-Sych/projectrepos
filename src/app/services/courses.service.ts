@@ -30,7 +30,7 @@ export class CoursesService {
     return this.http.delete(this.REST_API_SERVER + '/courses/' + id);
   }
 
-  public filterCourse(term: string) {
+  public filterCourse(term: any) {
     return this.http.get<Course[]>(this.REST_API_SERVER + `/courses/filter?title=${term}`);
   }
 }
